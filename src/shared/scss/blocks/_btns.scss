@@ -1,0 +1,28 @@
+.btn {
+   display: inline-flex;
+   padding: 16px 32px;
+   justify-content: center;
+   align-items: center;
+
+   border-radius: 100px;
+   background-color: $primary-color;
+   cursor: pointer;
+
+   span {
+      color: $white-color;
+      font-size: 24px;
+      font-weight: 500;
+   }
+
+   &--arrow {
+      column-gap: 16px;
+      svg {
+         width: 49px;
+         height: 16px;
+
+         path {
+            fill: $white-color;
+         }
+      }
+   }
+}

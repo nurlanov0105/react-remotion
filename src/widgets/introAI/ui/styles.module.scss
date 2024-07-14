@@ -1,0 +1,99 @@
+.intro {
+   display: flex;
+   justify-content: center;
+   padding: 3rem;
+
+   &__box {
+      display: inline-flex;
+      gap: 2rem;
+      padding: 3rem;
+      background: linear-gradient(145deg, rgba(86, 25, 135, 1), rgba(65, 14, 110, 1));
+      border-radius: 1.6rem;
+      box-shadow: 0 0 15px rgba(0, 0, 0, 0.5), 0 0 30px rgba(86, 25, 135, 0.7);
+      position: relative;
+      overflow: hidden;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      z-index: 1;
+
+      &:hover {
+         transform: translateY(-10px);
+         box-shadow: 0 0 30px rgba(0, 0, 0, 0.7), 0 0 60px rgba(86, 25, 135, 0.9);
+      }
+
+      &::before {
+         content: "";
+         position: absolute;
+         top: 0;
+         left: 50%;
+         width: 200%;
+         height: 100%;
+         background: radial-gradient(circle at 50% 0, rgba(255, 255, 255, 0.3), transparent 70%);
+         transform: translateX(-50%) scale(1.5);
+         transition: transform 0.3s ease;
+         z-index: 0; /* Ensure this is behind the content */
+      }
+
+      &:hover::before {
+         transform: translateX(-50%) scale(2);
+      }
+   }
+
+   &__img {
+      height: 25rem;
+      z-index: 2;
+   }
+
+   &__right {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+   }
+   &__list {
+      width: 40rem;
+      padding-top: 2rem;
+   }
+
+   &__list > li {
+      overflow: hidden;
+      white-space: nowrap;
+      animation: typing 1.5s steps(20, end) forwards;
+      font-size: 1.6rem;
+      width: 0;
+   }
+
+   @keyframes typing {
+      from {
+         width: 0;
+      }
+      to {
+         width: 100%;
+      }
+   }
+
+   &__btn {
+      margin-left: auto;
+      z-index: 2;
+      position: relative;
+      background: linear-gradient(145deg, rgba(255, 255, 255, 0.3), rgba(255, 255, 255, 0.1));
+      border: 1px solid rgba(255, 255, 255, 0.5);
+      border-radius: 0.8rem;
+      padding: 1.2rem 2rem;
+      color: white;
+      font-size: 2rem;
+      cursor: pointer;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.5), 0 0 20px rgba(86, 25, 135, 0.7);
+      transition: background 0.3s ease, box-shadow 0.3s ease, transform 0.3s ease;
+
+      &:hover {
+         background: linear-gradient(145deg, rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 0.3));
+         box-shadow: 0 0 20px rgba(0, 0, 0, 0.7), 0 0 40px rgba(86, 25, 135, 0.9);
+         transform: translateY(-5px);
+      }
+
+      &:active {
+         background: linear-gradient(145deg, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0));
+         box-shadow: 0 0 10px rgba(0, 0, 0, 0.5), 0 0 20px rgba(86, 25, 135, 0.7);
+         transform: translateY(0);
+      }
+   }
+}
